@@ -66,7 +66,7 @@ function QuizProvider({ children }) {
   const percentage = (points / maxScore) * 100;
 
   function fetchQuestions() {
-    fetch("http://localhost:9000/questions")
+    fetch("/data/questions.json")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed", payload: err }));
